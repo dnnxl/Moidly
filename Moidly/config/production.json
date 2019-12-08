@@ -1,0 +1,6 @@
+{
+    "name": "Moidly App - Production",
+    "mail": {
+        "host": "prod-mail-server"
+    }
+}
