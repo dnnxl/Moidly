@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Joi = require('joi');
 const helmet = require('helmet')
 const morgan = require('morgan');
@@ -7,6 +8,10 @@ const genres = require('./routes/genres');
 const startupDebugger = require('debug')('app:startup');
 const dbDebugger = require('debug')('app:db');
 const config = require('config');
+
+mongoose.connect('mongodb://localhost/moidly')
+  .then(() => console.log('Connected to MongoDB ...'))
+  .catch(err => console.error('Could not connect to MongoDB'));
 
 app.set('view engine', 'pug');
 app.set('views', './views');
