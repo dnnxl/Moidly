@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const express = require('express');
 const app = express();
 const genres = require('./routes/genres');
+Joi.objectId = require('joi-objectid')(Joi);
 
 const customers = require('./routes/customers');
 const startupDebugger = require('debug')('app:startup');
