@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const express = require('express');
 const app = express();
 const genres = require('./routes/genres');
+
+const customers = require('./routes/customers');
 const startupDebugger = require('debug')('app:startup');
 const dbDebugger = require('debug')('app:db');
 const config = require('config');
@@ -22,6 +24,7 @@ app.use(express.static('public'));
 app.use(helmet());
 
 app.use('/api/genres', genres);
+app.use('/api/customers', customers);
 
 if(app.get('env') === 'development'){
   app.use(morgan('tiny'));
