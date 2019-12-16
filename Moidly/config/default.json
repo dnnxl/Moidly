@@ -1,3 +1,4 @@
 {
-    "name": "Moidly App"
+    "name": "Moidly App",
+    "jwtPrivateKey": "moidly_jwtPrivateKey"
 }
