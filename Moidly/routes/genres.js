@@ -1,11 +1,18 @@
 const auth = require('../middleware/auth');
 const admin = require('../middleware/admin');
 
+
 const express = require('express');
 const router = express.Router();
 const { Genre, validate } = require('../models/genres');
 
-router.get('/', async (req, res) => {
+
+
+
+
+
+router.get('/',  async (req, res) => {
+
   const genres = await Genre.find().sort('name');
   res.send(genres);
   //res.render('index', { title: 'My Express App', message:'Hello'});
